@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+             x:Class="TestMapRender.MainPage"
+             Loaded="MainPage_OnLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <maps:SfMaps Grid.Row="1" x:Name="WorldDisplay">
+            <maps:SfMaps.Layer>
+                <maps:MapShapeLayer x:Name="biomesLayer"
+                                    ShapesSource="https://raw.githubusercontent.com/mkstephenson/sfmaps-geojson-test/refs/heads/main/biomes.json">
+                    <maps:MapShapeLayer.ZoomPanBehavior>
+                        <maps:MapZoomPanBehavior EnableZooming="True"
+                                                 EnablePanning="True" />
+                    </maps:MapShapeLayer.ZoomPanBehavior>
+                </maps:MapShapeLayer>
+            </maps:SfMaps.Layer>
+        </maps:SfMaps>
+    </Grid>
+</ContentPage>
